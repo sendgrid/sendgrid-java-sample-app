@@ -12,7 +12,7 @@ Clone SendGrid application on your local machine
 
 ###Configuration###
 
-Configure `src/com/oracle/OracleSendGridJavaSendServlet.java` file with your information:
+Configure `src/com/sendgrid/SendGridJavaSampleApplicationSendServlet.java.java` file with your information:
 
 Update the *&lt;sendgrid_username&gt;* and *&lt;sendgrid_password&gt;* with your SendGrid Credentials and *&lt;from_email&gt;* with your email address.
 ```java
