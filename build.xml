@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." default="build" name="SendGridJavaSampleApplication">
+    <property environment="env"/>
+    <property name="srcDir" value="."/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+    <path id="classpathDir">
+        <pathelement location="bin"/>
+        <pathelement location="lib/servlet-api-2.5.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="WebContent">
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target name="build" depends="build-project,build-war"/>
+    <target name="cleanall" depends="clean"/>
+    <target name="build-project" depends="init">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}"
+		includeantruntime="false">
+            <src path="src"/>
+            <classpath refid="classpathDir"/>
+        </javac>
+    </target>
+ 
+   <target name="build-war" depends="build-project">
+	<war destfile="myapp.war" webxml="WebContent/WEB-INF/web.xml">
+	  <classes dir="bin"/>
+	</war>
+    </target>
+
+</project>
