@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>We Make Email Delivery Easy | SendGrid jsp</title>
+    <title>We Make Email Delivery Easy | SendGrid</title>
     <link type="text/css" rel="stylesheet" href="<%= request.getContextPath() %>/main.css" />
   </head>
   <body>
