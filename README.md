@@ -31,6 +31,6 @@ Update the *&lt;sendgrid_username&gt;* and *&lt;sendgrid_password&gt;* with your
 
 Build your application and deploy to your webserver.
 
-For more information visit our [GitHub page](https://github.com/sendgrid/sendgrid-java)
+For more information visit our [Java Library](https://github.com/sendgrid/sendgrid-java)
 
 
