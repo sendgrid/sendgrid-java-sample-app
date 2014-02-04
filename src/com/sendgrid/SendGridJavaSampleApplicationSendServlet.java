@@ -35,7 +35,8 @@ public class SendGridJavaSampleApplicationSendServlet extends HttpServlet {
         req.setAttribute("message", "Your request was successfully processed.");
         req.setAttribute("myclass", "success");
       } else {
-        req.setAttribute("message", "Request failed  - " + jsonResponse.getString("message"));
+        String error = jsonResponse.getJSONArray("errors").getString(0);
+        req.setAttribute("message", "Request failed  - " + error);
         req.setAttribute("myclass", "error");
       }
       req.getRequestDispatcher("success.jsp").forward(req, resp);
